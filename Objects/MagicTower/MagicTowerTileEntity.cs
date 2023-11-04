@@ -28,8 +28,7 @@ namespace AutomationDefense.Objects.MagicTower
         public int BaseDamage { get; } = 20;
         public override Point16 Origin { get; } = new Point16(1,6);
 
-        public bool UpdateState { get; set; }
-
+        public int NumOfBulletsStored { get; } = 100;
 
         public Vector2 PositionWordCoordinates()
         {
@@ -52,26 +51,25 @@ namespace AutomationDefense.Objects.MagicTower
         public override int Hook_AfterPlacement(int x, int y, int type, int style, int direction, int alternate)
         {
             var placedEntity = base.Hook_AfterPlacement(x, y, type, style, direction, alternate);
-            if (TileHelper.TryGetTileEntity<MagicTowerTileEntity>(x, y, out var tower))
-            {
-                tower.UpdateState = true;
-            }
+
             return placedEntity;
         }
 
         public override void SaveData(TagCompound tag)
         {
+            tag["CurrentBullet"] = CurrentBullet;
             base.SaveData(tag);
         }
 
         public override void LoadData(TagCompound tag)
         {
+            if (tag.TryGet<Item>("CurrentBullet", out var bullet))
+            {
+                CurrentBullet = bullet;
+            }
             base.LoadData(tag);
         }
-        public void UpdateTileState()
-        {
-            GetChests();
-        }
+
         public void GetChests()
         {
             LeftChest = null;
@@ -87,21 +85,12 @@ namespace AutomationDefense.Objects.MagicTower
             {
                 RightChest = Main.chest[rightChestIndex];
             }
-
-            Main.NewText($"Left chest {LeftChest} Right Chest {RightChest}");
         }
 
         public override void Update()
         {
-            if (UpdateState)
+            if (Main.GameUpdateCount % TicksPerUpdate == 0)
             {
-                UpdateTileState();
-                UpdateState = false;
-            }
-
-            if (Main.GameUpdateCount % TicksPerUpdate == 0 && (LeftChest != null || RightChest != null))
-            {
-
                 FindClosestNPC(1000f, PositionWordCoordinates());
 
                 if (CurrentEnemy == null)
@@ -111,7 +100,8 @@ namespace AutomationDefense.Objects.MagicTower
 
                 // No bullet
                 if (!CurrentBullet.ValidItem())
-                {         
+                {
+                    GetChests();
                     if (LeftChest != null)
                     {
                         for (int i = 0; i < LeftChest.item.Length; i++)
@@ -120,7 +110,7 @@ namespace AutomationDefense.Objects.MagicTower
                             if (currentItem.ValidItem() && currentItem.ammo == AmmoID.Bullet)
                             {
                                 CurrentBullet = currentItem.Clone();
-                                CurrentBullet.stack = Math.Min(currentItem.stack, 1);
+                                CurrentBullet.stack = Math.Min(currentItem.stack, NumOfBulletsStored);
                                 currentItem.stack -= CurrentBullet.stack;
 
                                 if (currentItem.stack <= 0)
@@ -143,7 +133,7 @@ namespace AutomationDefense.Objects.MagicTower
                                 if (currentItem.ValidItem() && currentItem.ammo == AmmoID.Bullet)
                                 {
                                     CurrentBullet = currentItem.Clone();
-                                    CurrentBullet.stack = Math.Min(currentItem.stack, 1);
+                                    CurrentBullet.stack = Math.Min(currentItem.stack, NumOfBulletsStored);
                                     currentItem.stack -= CurrentBullet.stack;
 
                                     if (currentItem.stack <= 0)
@@ -222,6 +212,9 @@ namespace AutomationDefense.Objects.MagicTower
                 }
             }
         }
-
+        public override void GetAdditionalDrops()
+        {
+            SpawnDropItem(CurrentBullet);
+        }
     }
 }

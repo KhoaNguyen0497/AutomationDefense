@@ -33,15 +33,7 @@ namespace AutomationDefense.Objects.MagicTower
             ModContent.GetInstance<MagicTowerTileEntity>().Kill(i, j);
         }
 
-        public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
-        {
-            if (TileHelper.TryGetTileEntity<MagicTowerTileEntity>(i, j, out var tower))
-            {
-                tower.UpdateState = true;
-            }
 
-            return base.TileFrame(i, j, ref resetFrame, ref noBreak);
-        }
 
     }
 }

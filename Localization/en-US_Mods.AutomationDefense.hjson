@@ -77,7 +77,8 @@ Items: {
 			Automatically shoots bullets at nearby enemies. 
 			Base damage: 20
 			Base speed: 6 per second
-			Place chest on either side with bullets to provide the tower ammunition. 
+			Place chest on either side with bullets to provide the tower ammunition.
+			Pulls upto 100 bullets to store internally.
 			'''
 	}
 }
