@@ -1,0 +1,83 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	ItemTransporter: {
+		DisplayName: Item Transporter
+		Tooltip:
+			'''
+			[c/0099ff:<right> to rotate]
+			Transports items to another Item Transporter or Item Funnel
+			Speed: 6 item per second (infinite stacks)
+			'''
+	}
+
+	ItemFunnel: {
+		DisplayName: Item Funnel
+		Tooltip:
+			'''
+			[c/0099ff:<right> to rotate]
+			[c/0099ff:Shift <right> to set filters]
+			Automatically extracts or inserts items into chest
+			Extraction/Insertion speed: 6 item per second (infinite stacks)
+			Upto 5 filters can be set for extraction mode
+			'''
+	}
+
+	StoneGenerator: {
+		DisplayName: Stone Generator
+		Tooltip:
+			'''
+			Automatically generates [i:StoneBlock].
+			Generation speed: 5 [i:StoneBlock] per second
+			Place a chest next to the machine to store [i:StoneBlock].
+			'''
+	}
+
+	OreExtractor: {
+		DisplayName: Ore Extractor
+		Tooltip:
+			'''
+			[c/0099ff:<right> to set pickaxe and filter]
+			Automatically extracts vanilla ores from [i:StoneBlock].
+			Extraction speed: 100 [i:StoneBlock] per second
+			Ore chance: 1% per stone block
+			Place input chest with stones on one side and output chest on the other side. Direction is indicated by the animation.
+			Pickaxe's power determines which ores can be extracted.
+			If filter is set and pickaxe's power is sufficient, only that ore will be extracted.
+			'''
+	}
+
+	Splitter: {
+		DisplayName: Splitter and Merger
+		Tooltip:
+			'''
+			[c/0099ff:<right> to set filters]
+			Splits and merges items based on the direction of the connected Item Transporters.
+			Upto 3 filters can be used for splitting items evenly.
+			'''
+	}
+
+	AutoCrafter: {
+		DisplayName: Auto Crafter
+		Tooltip:
+			'''
+			[c/0099ff:<right> to set recipe and crafting stations]
+			Automatically crafts items if the right crafting stations are set. 
+			Base speed: craft once per second
+			Place chest with ingredients on one side and another one on the other side for the crafted item.
+			Items with Near Water/Honey/Lava conditions are free to craft. Items with Near Altar condition are not supported.
+			Click on the Cycle button to cycle through alternate recipes.
+			'''
+	}
+
+	MagicTower: {
+		DisplayName: Magic Tower
+		Tooltip:
+			'''
+			Automatically shoots bullets at nearby enemies. 
+			Base damage: 20
+			Base speed: 6 per second
+			Place chest on either side with bullets to provide the tower ammunition. 
+			'''
+	}
+}

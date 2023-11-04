@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>AutomationDefense</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="GUI\PreviewImages\Pickaxe.png" />
+    <None Remove="Objects\AutoCrafter\AutoCrafter.png" />
+    <None Remove="Objects\AutoCrafter\AutoCrafterTile.png" />
+    <None Remove="Objects\MagicTower\MagicTower.png" />
+    <None Remove="Objects\MagicTower\MagicTowerTile.png" />
+    <None Remove="Objects\OreExtractor\OreExtractor.png" />
+    <None Remove="Objects\OreExtractor\OreExtractorTile.png" />
+    <None Remove="Objects\StoneGenerator\StoneGenerator.png" />
+    <None Remove="Objects\StoneGenerator\StoneGeneratorTile.png" />
+    <None Remove="Objects\Transportation\ItemFunnel\ItemFunnel.png" />
+    <None Remove="Objects\Transportation\ItemFunnel\ItemFunnelTile.png" />
+    <None Remove="Objects\Transportation\ItemTransporter\ItemTransporter.png" />
+    <None Remove="Objects\Transportation\ItemTransporter\ItemTransporterTile.png" />
+    <None Remove="Objects\Transportation\Splitter\Splitter.png" />
+    <None Remove="Objects\Transportation\Splitter\SplitterTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\Buttons\" />
+    <Folder Include="GUI\Assets\" />
+  </ItemGroup>
+</Project>
