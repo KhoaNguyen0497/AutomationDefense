@@ -15,7 +15,7 @@ namespace AutomationDefense.Objects
 {
     public abstract class BaseMultiTileEntity : ModTileEntity
     {
-        public virtual int TicksPerUpdate { get; set; } = 60; // 1second per update
+        public virtual int TicksPerUpdate { get; } = 60; // 1second per update
         public int Alternate;
         public abstract Point16 Origin { get; } // this must be the same as the one in MultiTile
         public override int Hook_AfterPlacement(int x, int y, int type, int style, int direction, int alternate)

@@ -17,7 +17,7 @@ namespace AutomationDefense.Objects.MagicTower
     public class MagicTowerTileEntity : BaseMultiTileEntity
     {
         public Vector2 OriginOffset = new Vector2(2,1);
-        public override int TicksPerUpdate { get; set; } = 10; // 6 updates per second
+        public override int TicksPerUpdate { get; } = 10; // 6 updates per second
         public Item CurrentBullet { get; set; }
         public NPC CurrentEnemy { get; set; }
         public float MaxDetectDistance { get; } = 1000f;

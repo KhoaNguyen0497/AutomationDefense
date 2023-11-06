@@ -18,7 +18,7 @@ namespace AutomationDefense.Objects.OreExtractor
         {
             SetStaticDefaults(7, 5);
         }
-        public override void SetAlternate()
+        public override void SetCustomAttributes()
         {
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);

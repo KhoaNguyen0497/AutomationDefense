@@ -24,6 +24,11 @@ namespace AutomationDefense.Helpers
             return Random.Next(0, 100) < chance;
         }
 
+        public static int RandomNumber(int min, int max)
+        {
+            return Random.Next(min, max);
+        }
+
         public static T RandomElement<T>(this IEnumerable<T> items)
         {
             return items.ElementAt(Random.Next(0, items.Count()));

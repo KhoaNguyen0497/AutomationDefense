@@ -27,9 +27,9 @@ Items: {
 		DisplayName: Stone Generator
 		Tooltip:
 			'''
-			Automatically generates [i:StoneBlock].
+			Automatically generates [i:StoneBlock]
 			Generation speed: 5 [i:StoneBlock] per second
-			Place a chest next to the machine to store [i:StoneBlock].
+			Place a chest next to the machine to store [i:StoneBlock]
 			'''
 	}
 
@@ -38,12 +38,12 @@ Items: {
 		Tooltip:
 			'''
 			[c/0099ff:<right> to set pickaxe and filter]
-			Automatically extracts vanilla ores from [i:StoneBlock].
+			Automatically extracts vanilla ores from [i:StoneBlock]
 			Extraction speed: 100 [i:StoneBlock] per second
 			Ore chance: 1% per stone block
-			Place input chest with stones on one side and output chest on the other side. Direction is indicated by the animation.
-			Pickaxe's power determines which ores can be extracted.
-			If filter is set and pickaxe's power is sufficient, only that ore will be extracted.
+			Place input chest with stones on one side and output chest on the other side Direction is indicated by the animation
+			Pickaxe's power determines which ores can be extracted
+			If filter is set and pickaxe's power is sufficient, only that ore will be extracted
 			'''
 	}
 
@@ -52,8 +52,9 @@ Items: {
 		Tooltip:
 			'''
 			[c/0099ff:<right> to set filters]
-			Splits and merges items based on the direction of the connected Item Transporters.
-			Upto 3 filters can be used for splitting items evenly.
+			Splits and merges items based on the direction of the connected Item Transporters
+			Each outgoing direction can have upto 3 filters
+			Items that match the filter will go to those directions only. Otherwise, they are split evenly
 			'''
 	}
 
@@ -62,11 +63,11 @@ Items: {
 		Tooltip:
 			'''
 			[c/0099ff:<right> to set recipe and crafting stations]
-			Automatically crafts items if the right crafting stations are set. 
+			Automatically crafts items if the right crafting stations are set 
 			Base speed: craft once per second
-			Place chest with ingredients on one side and another one on the other side for the crafted item.
-			Items with Near Water/Honey/Lava conditions are free to craft. Items with Near Altar condition are not supported.
-			Click on the Cycle button to cycle through alternate recipes.
+			Place chest with ingredients on one side and another one on the other side for the crafted item
+			Items with Near Water/Honey/Lava conditions are free to craft. Items with Near Altar condition are not supported
+			Click on the Cycle button to cycle through alternate recipes
 			'''
 	}
 
@@ -74,11 +75,30 @@ Items: {
 		DisplayName: Magic Tower
 		Tooltip:
 			'''
-			Automatically shoots bullets at nearby enemies. 
+			Automatically shoots bullets at nearby enemies 
 			Base damage: 20
 			Base speed: 6 per second
-			Place chest on either side with bullets to provide the tower ammunition.
-			Pulls upto 100 bullets to store internally.
+			Place chest on either side with bullets to provide the tower ammunition
+			Pulls upto 100 bullets to store internally
+			'''
+	}
+
+	WoodHarvester: {
+		DisplayName: Wood Harvester
+		Tooltip:
+			'''
+			Extracts wood and puts it in the Wood Harvester Base at the bottom 
+			Can stack on top of each other to make a long line
+			Extraction speed: 1 wood per 10 seconds
+			'''
+	}
+
+	WoodHarvesterBase: {
+		DisplayName: Wood Harvester Base
+		Tooltip:
+			'''
+			Collects woods from all Wood Harvesters on top of it
+			Sends woods to a chest next to it
 			'''
 	}
 }

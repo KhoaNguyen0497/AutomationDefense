@@ -1,9 +1,6 @@
 ﻿using AutomationDefense.GUI;
-using AutomationDefense.GUI.UIStates;
-using AutomationDefense.Helpers;
 using AutomationDefense.Objects;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using AutomationDefense.Objects.WoodHarvesterBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,35 +10,34 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Enums;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace AutomationDefense.Objects.AutoCrafter
+namespace AutomationDefense.Objects.WoodHarvester
 {
-    public class AutoCrafterTile : BaseMultilTile<AutoCrafterTileEntity>
+    public class WoodHarvesterTile : BaseMultilTile<WoodHarvesterTileEntity>
     {
-        public override int ItemType => ModContent.ItemType<AutoCrafter>();
-        public override Point16 Origin { get; } = new Point16(3, 3);
+        public override int ItemType => ModContent.ItemType<WoodHarvester>();
+        public override Point16 Origin { get; } = new Point16(0, 0);
 
         public override void SetStaticDefaults()
         {
-            SetStaticDefaults(4, 4);
+
+
+            SetStaticDefaults(2, 2);
         }
 
-        public override bool RightClick(int i, int j)
+        public override bool CanPlace(int i, int j)
         {
-            if (TileHelper.TryGetTileEntity<AutoCrafterTileEntity>(i, j, out var autoCrafter))
-            {
-                ModContent.GetInstance<UISystem>().ToggleUI<AutoCrafterUIState>(autoCrafter);
-            }
-
-            return base.RightClick(i, j);
+            return false;
         }
+
 
         public override void SetCustomAttributes()
         {
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.AlternateTile, 2, 0);
+            TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<WoodHarvesterTile>(), ModContent.TileType<WoodHarvesterBaseTile>() };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
 
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
@@ -54,13 +50,15 @@ namespace AutomationDefense.Objects.AutoCrafter
             if (++frameCounter >= 4)
             {
                 frameCounter = 0;
-                frame = ++frame % 45;
+                frame = ++frame % 43;
             }
         }
 
+   
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            ModContent.GetInstance<AutoCrafterTileEntity>().Kill(i, j);
+            ModContent.GetInstance<WoodHarvesterTileEntity>().Kill(i, j);
         }
+
     }
 }

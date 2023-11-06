@@ -9,10 +9,10 @@ Now let's get into it.
 
 [h2]Transportation System[/h2]
 [h3]Item Transporter[/h3]
-The main component of this mod. It transports items around like conveyor belts, like a pipe system. However, it doesn't work by itself, it needs to be connected to other components.
+Transports items around like a pipe system. Can be connected to Funnel for extracting/inserting and splitter/merger.
 
 [h3]Item Funnel[/h3]
-Acts as both an extractor and inserter. Whether it extracts or inserts depends on the direction of the Item Transporter connected to it. Can only interact with chests.
+Acts as both an extractor and inserter, mode depends on the direction of the connected Transporter. Can only interact with chests.
 
 [h3]Splitter & Merger[/h3]
 Two items in one. Can split and merge at the same time. 
@@ -26,16 +26,25 @@ Generates stone blocks indefinitely, outputs to a chest next to it.
 
 [h3]Ore Extractor[/h3]
 Extract ores (...by magic) from stone blocks. 
-To make sure it's not too OP, the chance is very low (1% per block) and it needs a lot of ingredients to craft.
-A pickaxe must be set to start the machine. The pickaxe's power decides which ores can be extracted, they are all extracted randomly. A filter can be set so only a specific ore can be extracted (if pickaxe's power is sufficient).
-Supports all vanilla ores including Meteorite and Obsidian, but not Luminite. 
 
-Input and output chests on the side are also needed.
+Requires: Pickaxe (pickpower decides which ores can be extracted), input chest with stone blocks, output chest to store ores.
+
+Filter can be set so only a specific ore is extracted. Otherwise, all ores are extracted randomly (1% chance per stone block).
 
 [h3]Auto Crafter[/h3]
-Provided with an item, and the required crafting stations, it will craft the item periodically. For items with no crafting stations, but with conditions (near honey, lava, etc.) are free to craft. Items that require Demon Altar are not supported (unless you have another mod which adds an item that can place these altars, but I have not tested)
+Craft items periodically.
 
-Input and output chests on the side are also needed.
+Requires: an Item for recipe, related crafting stations, input chest with ingredients, output chest to store crafted items.
+
+Items with near water/honey/lava conditions are free to craft. Items that require Demon Altar are not supported (unless you have another mod which adds an item to place altars, but I have not tested)
+
+[h3]Wood Harvester[/h3]
+
+Extracts woods and sends to the Wood Harvester Base at the bottom. Can stack on top of each other to make a looong line.
+
+[h3]Wood Harvester Base[/h3]
+
+Stores woods from Harvesters above it. Sends woods to a chest next to it.
 
 [h2]Defense System[/h2]
 [h3]Magic Tower[/h3]
@@ -51,3 +60,4 @@ If you find any bug, leave a screenshot or a description (what's in the filter, 
 If you have any idea for new machines, let me know, and if you also provide the arts for it I'll make it.
 
 The mod is by nature very OP because Terraria doesn't need any automation. With enough grinding, you can probably set up an infinite ore generation and insta kill any boss with lots of towers.
+[quote=tModLoader]Developed By SirKoral[/quote]

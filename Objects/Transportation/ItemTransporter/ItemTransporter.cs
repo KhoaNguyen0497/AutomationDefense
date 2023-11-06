@@ -13,7 +13,7 @@ namespace AutomationDefense.Objects.Transportation.ItemTransporter
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 5);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

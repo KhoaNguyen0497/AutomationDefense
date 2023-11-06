@@ -31,7 +31,7 @@ namespace AutomationDefense.Objects.StoneGenerator
             return base.RightClick(i, j);
         }
 
-        public override void SetAlternate()
+        public override void SetCustomAttributes()
         {
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
 

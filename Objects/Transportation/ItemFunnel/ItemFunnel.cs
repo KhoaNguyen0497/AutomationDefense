@@ -11,7 +11,7 @@ namespace AutomationDefense.Objects.Transportation.ItemFunnel
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 10);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 2);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

@@ -42,12 +42,12 @@ namespace AutomationDefense.Objects
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(ModContent.GetInstance<T>().Hook_AfterPlacement, -1, 0, false);
 
-            SetAlternate();
+            SetCustomAttributes();
 
             TileObjectData.addTile(Type);
         }
 
-        public virtual void SetAlternate()
+        public virtual void SetCustomAttributes()
         {
 
         }
