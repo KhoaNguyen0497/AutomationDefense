@@ -13,8 +13,6 @@ namespace AutomationDefense.Helpers
     {
         public static bool DepositIntoChest(this Chest chest, Item itemToDeposit)
         {
-
-
             if (!itemToDeposit.ValidItem())
             {
                 return false;
@@ -132,6 +130,16 @@ namespace AutomationDefense.Helpers
             }
 
             return clonedDict.All(x => x.Value == 0);
+        }
+
+        public static int AvailableSlots(this Chest chest) 
+        {
+            if (chest == null)
+            {
+                return 0;
+            }
+
+            return chest.item.Count(x => !x.ValidItem());
         }
     }
 }

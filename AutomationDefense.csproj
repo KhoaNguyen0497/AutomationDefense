@@ -11,6 +11,8 @@
     <None Remove="GUI\PreviewImages\Pickaxe.png" />
     <None Remove="Objects\AutoCrafter\AutoCrafter.png" />
     <None Remove="Objects\AutoCrafter\AutoCrafterTile.png" />
+    <None Remove="Objects\ItemVacuum\ItemVacuum.png" />
+    <None Remove="Objects\ItemVacuum\ItemVacuumTile.png" />
     <None Remove="Objects\MagicTower\MagicTower.png" />
     <None Remove="Objects\MagicTower\MagicTowerTile.png" />
     <None Remove="Objects\OreExtractor\OreExtractor.png" />

@@ -48,12 +48,6 @@ namespace AutomationDefense.Objects.MagicTower
             Tile tile = Main.tile[x, y];
             return tile.HasTile && tile.TileType == ModContent.TileType<MagicTowerTile>();
         }
-        public override int Hook_AfterPlacement(int x, int y, int type, int style, int direction, int alternate)
-        {
-            var placedEntity = base.Hook_AfterPlacement(x, y, type, style, direction, alternate);
-
-            return placedEntity;
-        }
 
         public override void SaveData(TagCompound tag)
         {

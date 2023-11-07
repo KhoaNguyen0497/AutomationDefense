@@ -1,6 +1,3 @@
-[h1]Automation & Defense[/h1]
-[quote=tModLoader]Developed By SirKoral[/quote]
-
 As a big fan of automation, I have decided to make my first tech mod for Terraria. Lots of items are heavily inspired by [url=https://www.curseforge.com/minecraft/mc-mods/create]Create Mod[/url] in Minecraft, you should check it out.
 
 Before I start, I have to say I am not good at creating pixel arts so lots of sprites are modified directly from [url=https://foozlecc.itch.io/]Foozle[/url]. Their arts are free to use and distribute, please give them support if you feel like it.
@@ -9,10 +6,12 @@ Now let's get into it.
 
 [h2]Transportation System[/h2]
 [h3]Item Transporter[/h3]
-Transports items around like a pipe system. Can be connected to Funnel for extracting/inserting and splitter/merger.
+Transports items around like a pipe system. Can be connected to Funnel for extracting/inserting, and Splitter/Merger.
 
 [h3]Item Funnel[/h3]
 Acts as both an extractor and inserter, mode depends on the direction of the connected Transporter. Can only interact with chests.
+
+Filter can be set for extracting mode.
 
 [h3]Splitter & Merger[/h3]
 Two items in one. Can split and merge at the same time. 
@@ -39,12 +38,14 @@ Requires: an Item for recipe, related crafting stations, input chest with ingred
 Items with near water/honey/lava conditions are free to craft. Items that require Demon Altar are not supported (unless you have another mod which adds an item to place altars, but I have not tested)
 
 [h3]Wood Harvester[/h3]
-
 Extracts woods and sends to the Wood Harvester Base at the bottom. Can stack on top of each other to make a looong line.
 
 [h3]Wood Harvester Base[/h3]
-
 Stores woods from Harvesters above it. Sends woods to a chest next to it.
+
+[h3]Item Vacuum[/h3]
+Collects items around it and puts them in chests on either side
+Radius can be increased/decreased
 
 [h2]Defense System[/h2]
 [h3]Magic Tower[/h3]
@@ -60,4 +61,3 @@ If you find any bug, leave a screenshot or a description (what's in the filter, 
 If you have any idea for new machines, let me know, and if you also provide the arts for it I'll make it.
 
 The mod is by nature very OP because Terraria doesn't need any automation. With enough grinding, you can probably set up an infinite ore generation and insta kill any boss with lots of towers.
-[quote=tModLoader]Developed By SirKoral[/quote]

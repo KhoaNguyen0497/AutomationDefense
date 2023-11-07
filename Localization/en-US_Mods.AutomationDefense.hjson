@@ -101,4 +101,19 @@ Items: {
 			Sends woods to a chest next to it
 			'''
 	}
+
+	ItemVacuum: {
+		DisplayName: Item Vacuum
+		Tooltip:
+			'''
+			[c/0099ff:<right> with 5 Meteorite Bar] [i:MeteoriteBar] [c/0099ff:to increase pick up radius by 25 units]
+			[c/0099ff:<right> with any hammer to decrease pick up radius by 25 units]
+			Collects all items in a radius around it
+			Marks items for collection once per second if there are available slots in chests on either side
+			Base radius: 250 units
+			Max radius: 1000 units
+			Min radius: 100 units
+			Upgrades are not refunded when destroyed
+			'''
+	}
 }

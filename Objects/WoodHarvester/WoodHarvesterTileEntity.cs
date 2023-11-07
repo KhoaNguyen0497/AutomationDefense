@@ -66,7 +66,7 @@ namespace AutomationDefense.Objects.WoodHarvester
             var treeTile = Main.tile[Position.X + xOffset, Position.Y + 1];
             var grassTile = Main.tile[HarvesterBasePosition.X + xOffset, HarvesterBasePosition.Y + 3];
             
-            if (WorldGen.IsTreeType(treeTile.TileType) || treeTile.TileType == TileID.PalmTree)
+            if ((WorldGen.IsTreeType(treeTile.TileType) && !TileID.Sets.CountsAsGemTree[treeTile.TileType]) || treeTile.TileType == TileID.PalmTree)
             {
                 TreeTypes treeType = WorldGen.GetTreeType(grassTile.TileType);
 
@@ -144,7 +144,6 @@ namespace AutomationDefense.Objects.WoodHarvester
 
                 if (TileHelper.TryGetTileEntity<WoodHarvesterTileEntity>(x, y + 2, out var bottomHarvester))
                 {
-
                     currentHarvester.Order = bottomHarvester.Order + 1;
                     currentHarvester.HarvesterBasePosition = bottomHarvester.HarvesterBasePosition;
 
