@@ -1,6 +1,10 @@
+[h1]Automation & Defense[/h1]
+
 As a big fan of automation, I have decided to make my first tech mod for Terraria. Lots of items are heavily inspired by [url=https://www.curseforge.com/minecraft/mc-mods/create]Create Mod[/url] in Minecraft, you should check it out.
 
 Before I start, I have to say I am not good at creating pixel arts so lots of sprites are modified directly from [url=https://foozlecc.itch.io/]Foozle[/url]. Their arts are free to use and distribute, please give them support if you feel like it.
+
+I do not take donations. If you want to support, donate to any charity of your choice, or any of the creators I mentioned above.
 
 Now let's get into it.
 

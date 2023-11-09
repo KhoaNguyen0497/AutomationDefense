@@ -53,7 +53,7 @@ namespace AutomationDefense.GUI.UIStates
                     return true;
                 }
 
-                return OreExtractorTileEntity.AllowedOres.Keys.Contains(i.NullSafe().type);
+                return OreExtractorTileEntity.AllowedOres.Select(x => x.Item1).Contains(i.NullSafe().type);
             };
         }
 
