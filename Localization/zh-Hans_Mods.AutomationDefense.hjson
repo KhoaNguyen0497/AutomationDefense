@@ -1,0 +1,119 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	ItemTransporter: {
+		DisplayName: 物品传输器
+		Tooltip:
+			'''
+			[c/0099ff:<right>旋转方向]
+			将物品传输给另一个物品传输器/漏斗
+			物品传输速度：每秒 6 个物品(无限堆叠)
+			'''
+	}
+
+	ItemFunnel: {
+		DisplayName: 物品漏斗
+		Tooltip:
+			'''
+			[c/0099ff:<right>旋转方向]
+			[c/0099ff:Shift + <right> 打开条件过滤器]
+			自动将物品拿出/放入箱子，行为取决于漏斗和传输器连接的方向
+			物品传输速度：每秒 6 个物品(无限堆叠)
+			拿出模式下最多可设置 5 种过滤条件，即漏斗只拿出过滤器中已有类型的物品
+			'''
+	}
+
+	StoneGenerator: {
+		DisplayName: 刷石机
+		Tooltip:
+			'''
+			无消耗自动生成 [i:StoneBlock]
+			生成速度：每秒 5 [i:StoneBlock]
+			在其左侧放置箱子以存储生成的 [i:StoneBlock]
+			'''
+	}
+
+	OreExtractor: {
+		DisplayName: 矿石精炼器
+		Tooltip:
+			'''
+			[c/0099ff:<right>打开镐力/矿石过滤器]
+			自动消耗 [i:StoneBlock] 来生成原版矿石
+			消耗速度：每秒 100 [i:StoneBlock]
+			矿石生成几率：每个石块 1%
+			在其左侧放置存储生成矿石的箱子，右侧放置输入石块的箱子，可用物品传输器链接
+			过滤器中稿子的镐力，决定精炼器可以生成哪些矿石
+			如果过滤器中放置了某类矿石，并且镐力足够，则只会生成此种矿石
+			'''
+	}
+
+	Splitter: {
+		DisplayName: 分路合并器
+		Tooltip:
+			'''
+			[c/0099ff:<right>打开条件过滤器]
+			根据物品传输器连接的方向，管理线路上物品的传出
+			每个输出方向最多可以设置 3 种过滤条件
+			符合某个方向过滤条件的物品，将优先被输送到此方向，否则物品将被均匀分配
+			'''
+	}
+
+	AutoCrafter: {
+		DisplayName: 3D 打印机
+		Tooltip:
+			'''
+			[c/0099ff:<right>放置合成产物和制作站]
+			根据合适的制作站自动制作指定的物品
+			基础制作速度：每秒 1 次
+			在其右侧放置装有合成材料的箱子，右侧放置存储被制作物品的箱子
+			可以直接制作需要有水/蜂蜜/岩浆才能合成的物品，不支持需要有恶魔/猩红祭坛才能制作的物品
+			对于拥有多种合成方式路径的合成产物，点击其旁边的绿色按钮，切换想要使用的合成配方
+			'''
+	}
+
+	MagicTower: {
+		DisplayName: 魔法哨塔
+		Tooltip:
+			'''
+			自动向附近的敌人发射子弹
+			基础伤害：20
+			基础攻击速度：每秒 6 次
+			将装有子弹的箱子放在魔法哨塔两侧，以提供弹药
+			魔法哨塔内部最多可储存 100 颗子弹
+			'''
+	}
+
+	WoodHarvester: {
+		DisplayName: 伐木机
+		Tooltip:
+			'''
+			收割木材并将其放入底部的伐木基站
+			可垂直堆叠放置
+			生产速度: 每 10 秒 1 木头
+			'''
+	}
+
+	WoodHarvesterBase: {
+		DisplayName: 伐木基站
+		Tooltip:
+			'''
+			紧贴树木放置，从其上面连接的所有伐木机收集木材
+			把收集的木头存储到旁边的箱子里
+			'''
+	}
+
+	ItemVacuum: {
+		DisplayName: 真空吸尘器
+		Tooltip:
+			'''
+			[c/0099ff:手持 5 陨石锭] [i:MeteoriteBar] [c/0099ff:，<right>增加 25 像素收集范围]
+			[c/0099ff:手持任意锤子，<right>减小 25 像素收集范围]
+			收集周围半径范围内的物品并将它们放入旁边的箱子内
+			如果两侧的箱子都没放满，则每秒收集一次周围物品
+			基础半径：250 像素
+			最大半径：1000 像素
+			最小半径：100 像素
+			挖掉后，不会返还已经消耗的陨石锭
+			'''
+	}
+}

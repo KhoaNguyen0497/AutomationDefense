@@ -19,28 +19,28 @@ namespace AutomationDefense.Objects.OreExtractor
         public int StonesPerUpdate = 100;
         public override Point16 Origin { get; } = new Point16(3, 4);
 
-        public static List<Tuple<int, int, bool>> AllowedOres = new List<Tuple<int, int, bool>>
+        public static List<Tuple<int, int, Func<bool>>> AllowedOres = new List<Tuple<int, int, Func<bool>>>
         {
-            new Tuple<int, int, bool>(ItemID.CopperOre, 0, true),
-            new Tuple< int, int, bool>(ItemID.TinOre, 0, true),
-            new Tuple< int, int, bool>(ItemID.IronOre, 0, true),
-            new Tuple< int, int, bool>(ItemID.LeadOre, 0, true),
-            new Tuple< int, int, bool>(ItemID.SilverOre, 0, true),
-            new Tuple< int, int, bool>(ItemID.TungstenOre, 0, true),
-            new Tuple<int, int, bool>(ItemID.GoldOre, 35, true),
-            new Tuple<int, int, bool>(ItemID.PlatinumOre, 35, true),
-            new Tuple<int, int, bool>(ItemID.Meteorite, 50, Condition.DownedBrainOfCthulhu.IsMet() || Condition.DownedEaterOfWorlds.IsMet()),
-            new Tuple<int, int, bool>(ItemID.DemoniteOre, 55, true),
-            new Tuple<int, int, bool>(ItemID.CrimtaneOre, 55, true),
-            new Tuple<int, int, bool>(ItemID.Obsidian, 55, true),
-            new Tuple<int, int, bool>(ItemID.Hellstone, 65, true),
-            new Tuple<int, int, bool>(ItemID.CobaltOre, 100, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.PalladiumOre, 100, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.MythrilOre, 110, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.OrichalcumOre, 110, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.AdamantiteOre, 150, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.TitaniumOre, 150, Condition.Hardmode.IsMet()),
-            new Tuple<int, int, bool>(ItemID.ChlorophyteOre, 200, Condition.DownedMechBossAll.IsMet()),
+            new Tuple<int, int, Func<bool>>(ItemID.CopperOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.TinOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.IronOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.LeadOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.SilverOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.TungstenOre, 0, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.GoldOre, 35, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.PlatinumOre, 35, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.Meteorite, 50, () => Condition.DownedBrainOfCthulhu.IsMet() || Condition.DownedEaterOfWorlds.IsMet()),
+            new Tuple<int, int, Func<bool>>(ItemID.DemoniteOre, 55, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.CrimtaneOre, 55, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.Obsidian, 55, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.Hellstone, 65, () => true),
+            new Tuple<int, int, Func<bool>>(ItemID.CobaltOre, 100, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.PalladiumOre, 100, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.MythrilOre, 110, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.OrichalcumOre, 110, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.AdamantiteOre, 150, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.TitaniumOre, 150, Condition.Hardmode.IsMet),
+            new Tuple<int, int, Func<bool>>(ItemID.ChlorophyteOre, 200, Condition.DownedMechBossAll.IsMet),
         };
 
         public override void SetTilePropeties(int x, int y, int type, int style, int direction, int alternate)
@@ -108,7 +108,7 @@ namespace AutomationDefense.Objects.OreExtractor
                     var inputChest = Main.chest[inputChestIndex];
                     var outputChest = Main.chest[outputChestIndex];
 
-                    IEnumerable<int> validOres = AllowedOres.Where(x => x.Item2 <= Pickaxe.pick && x.Item3).Select(x => x.Item1);
+                    IEnumerable<int> validOres = AllowedOres.Where(x => x.Item2 <= Pickaxe.pick && x.Item3()).Select(x => x.Item1);
                     if (OreFilter.ValidItem())
                     {
                         validOres = validOres.Where(x => x == OreFilter.type);
@@ -125,7 +125,7 @@ namespace AutomationDefense.Objects.OreExtractor
                     }
 
                     
-                    for (int i = 0; i < stones.stack; i++)
+                    for (int i = 0; i <stones.stack; i++)
                     {
                         if (MathHelper.Chance(BaseOreChance))
                         {
