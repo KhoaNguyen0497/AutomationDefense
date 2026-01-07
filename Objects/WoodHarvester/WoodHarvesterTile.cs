@@ -23,16 +23,8 @@ namespace AutomationDefense.Objects.WoodHarvester
 
         public override void SetStaticDefaults()
         {
-
-
             SetStaticDefaults(2, 2);
         }
-
-        public override bool CanPlace(int i, int j)
-        {
-            return false;
-        }
-
 
         public override void SetCustomAttributes()
         {
